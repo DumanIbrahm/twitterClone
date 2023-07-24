@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:twitter_clone/my_pages/bottom_navigation_bar.dart';
 import 'package:twitter_clone/my_pages/drawer.dart';
 import 'package:twitter_clone/my_pages/home_page.dart';
-import 'package:twitter_clone/my_pages/test.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,7 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: MyHomePage(),
     );
@@ -31,10 +31,10 @@ class _MyHomePageState extends State<MyHomePage> {
   // EklemeSayfasi? sayfaEkle;
   // ProfilSayfasi? sayfaKisiler;
 
-  var keyHomePage = PageStorageKey("key_home_page");
-  var keySearch = PageStorageKey("key_search_page");
-  var keyNotification = PageStorageKey("key_notification_page");
-  var keyMessages = PageStorageKey("key_message_page");
+  var keyHomePage = const PageStorageKey("key_home_page");
+  var keySearch = const PageStorageKey("key_search_page");
+  var keyNotification = const PageStorageKey("key_notification_page");
+  var keyMessages = const PageStorageKey("key_message_page");
 
   List<Widget>? allPages;
   int _selectedIndex = 0;
@@ -52,21 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Material App Bar'),
-        // leading: IconButton(
-        //     onPressed: () {
-        //       Scaffold.of(context).openDrawer();
-        //     },
-        //     icon: const Icon(Icons.person_sharp)),
-      ),
+    return const Scaffold(
       bottomNavigationBar: BottomNavigationBars(),
       drawer: DrawerMenu(),
       // body: _selectedIndex <= allPages!.length - 1
       //     ? allPages![_selectedIndex]
       //     : allPages![0],
-      body: ModaApp(),
+      body: HomePage(),
     );
   }
 }
