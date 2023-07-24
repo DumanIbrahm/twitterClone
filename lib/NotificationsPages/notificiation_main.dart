@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/NotificationsPages/setting_for_notifications.dart';
+import 'package:twitter_clone/NotificationsPages/Settings/setting_for_notifications.dart';
 
-class NatificationsPage extends StatefulWidget {
-  const NatificationsPage({super.key});
+class NotificationsPage extends StatefulWidget {
+  const NotificationsPage({super.key});
 
   @override
-  State<NatificationsPage> createState() => _NatificationsPageState();
+  State<NotificationsPage> createState() => _NotificationsPageState();
 }
 
-class _NatificationsPageState extends State<NatificationsPage> {
+class _NotificationsPageState extends State<NotificationsPage> {
   @override
   Widget build(BuildContext context) {
     return tabController(context);
