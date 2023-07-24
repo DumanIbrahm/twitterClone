@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/NotificationsPages/Settings/setting_for_notifications.dart';
+import 'package:twitter_clone/my_pages/bottom_navigation_bar.dart';
+import 'package:twitter_clone/my_pages/drawer.dart';
 
 class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
@@ -21,9 +23,9 @@ Widget tabController(context) {
       initialIndex: 0,
       length: tabsCount,
       child: Scaffold(
-        // bottomNavigationBar: const BottomNavigationBars(
-        // ),
-        //drawer: const DrawerMenu(),
+        bottomNavigationBar: const BottomNavigationBars(
+        ),
+        drawer: const DrawerMenu(),
         backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.black,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/NotificationsPages/Settings/SettingsDetails/filtre_page.dart';
+import 'package:twitter_clone/NotificationsPages/Settings/preferences.dart';
 
 class SettingsForNotiPage extends StatefulWidget {
   const SettingsForNotiPage({super.key});
@@ -31,12 +33,12 @@ class _SettingsForNotiPageState extends State<SettingsForNotiPage> {
               title: const Text("Filtreler",style: TextStyle(color: Colors.white)),
               subtitle: const Text("Görmek istediğin ve istemediğin bildirimleri seç.",style: TextStyle(color: Colors.white,)),
               trailing: IconButton(onPressed: (){
-                // Navigator.pushAndRemoveUntil(
-                //         context,
-                //         MaterialPageRoute(
-                //             builder: (context) => const FiltelerPage()),
-                //         (route) => true,
-                //       );
+                Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FiltelerPage()),
+                        (route) => true,
+                      );
               }, icon: const Icon(Icons.arrow_forward_ios, color: Colors.white,)),
             ),
             ListTile(
@@ -44,12 +46,12 @@ class _SettingsForNotiPageState extends State<SettingsForNotiPage> {
               title: const Text("Tercihler",style: TextStyle(color: Colors.white)),
               subtitle: const Text("Bildirim türüne göre tercihlerini seç.",style: TextStyle(color: Colors.white)),
               trailing: IconButton(onPressed: (){
-                // Navigator.pushAndRemoveUntil(
-                //         context,
-                //         MaterialPageRoute(
-                //             builder: (context) => const Tercihler()),
-                //         (route) => true,
-                //       );
+                Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Preferences()),
+                        (route) => true,
+                      );
               }, icon: const Icon(Icons.arrow_forward_ios, color: Colors.white,)),
             )
           ],
