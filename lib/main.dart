@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List pages = [
     const HomePage(),
-    const TrendPage(),
+    TrendPage(),
     const NotificationsPage(),
     const MessageScreen(),
   ];
