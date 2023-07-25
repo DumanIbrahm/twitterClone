@@ -61,7 +61,7 @@ class _TrendPageState extends State<TrendPage> {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TrendSettings()),
+                            builder: (context) => const TrendSettings()),
                         (route) => false);
                   },
                   icon: const Icon(Icons.settings))
@@ -227,7 +227,8 @@ class _TrendPageState extends State<TrendPage> {
                 Navigator.pop(context);
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => TrendTopics()),
+                    MaterialPageRoute(
+                        builder: (context) => const TrendTopics()),
                     (route) => false);
               });
             },

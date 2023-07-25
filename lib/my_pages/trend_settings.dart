@@ -3,10 +3,13 @@ import 'package:twitter_clone/constant.dart';
 import 'package:twitter_clone/my_pages/trend_page.dart';
 
 class TrendSettings extends StatefulWidget {
+  const TrendSettings({super.key});
+
   @override
   State<StatefulWidget> createState() => _trendSettings();
 }
 
+// ignore: camel_case_types
 class _trendSettings extends State<TrendSettings> {
   bool myBool = true;
   bool myBool1 = true;
@@ -20,7 +23,7 @@ class _trendSettings extends State<TrendSettings> {
             Navigator.pop(context);
             Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => TrendPage()),
+                MaterialPageRoute(builder: (context) => const TrendPage()),
                 (route) => false);
           },
           icon: const Icon(
