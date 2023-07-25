@@ -54,7 +54,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      bottomNavigationBar: BottomNavigationBars(),
       drawer: DrawerMenu(),
       // body: _selectedIndex <= allPages!.length - 1
       //     ? allPages![_selectedIndex]

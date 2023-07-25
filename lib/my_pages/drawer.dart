@@ -55,7 +55,8 @@ class _DrawerMenuState extends State<DrawerMenu> {
                             ),
                             const Text(
                               "@username",
-                              style: TextStyle(color: Colors.grey, fontSize: 15),
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 15),
                             ),
                           ],
                         ),
@@ -69,10 +70,13 @@ class _DrawerMenuState extends State<DrawerMenu> {
                     padding: const EdgeInsets.only(left: 24.0),
                     child: Row(
                       children: const [
-                        Text("1000 ", style: TextStyle(color: Pallete.textColor)),
-                        Text("Takip eilen", style: TextStyle(color: Colors.grey)),
+                        Text("1000 ",
+                            style: TextStyle(color: Pallete.textColor)),
+                        Text("Takip eilen",
+                            style: TextStyle(color: Colors.grey)),
                         SizedBox(width: 20),
-                        Text("1000 ", style: TextStyle(color: Pallete.textColor)),
+                        Text("1000 ",
+                            style: TextStyle(color: Pallete.textColor)),
                         Text("Takipçi", style: TextStyle(color: Colors.grey)),
                       ],
                     ),
