@@ -18,7 +18,7 @@ class _DetailsState extends State<Details> {
         backgroundColor: Pallete.primaryColor,
         appBar: AppBar(
           backgroundColor: Pallete.primaryColor,
-          actions: [
+          actions: const [
             Icon(Icons.more_vert),
             SizedBox(
               width: 10,
@@ -40,7 +40,7 @@ class _DetailsState extends State<Details> {
                       width: 10,
                     ),
                     Column(
-                      children: [
+                      children: const [
                         Text(
                           "Daisy",
                           style: TextStyle(
@@ -77,7 +77,7 @@ class _DetailsState extends State<Details> {
             ),
             Container(
               width: MediaQuery.of(context).size.width - 160,
-              height: MediaQuery.of(context).size.height - 250,
+              height: MediaQuery.of(context).size.height - 300,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(widget.imgpath), fit: BoxFit.cover)),

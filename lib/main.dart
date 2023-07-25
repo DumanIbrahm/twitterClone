@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/my_pages/bottom_navigation_bar.dart';
+import 'package:twitter_clone/constant.dart';
 import 'package:twitter_clone/my_pages/drawer.dart';
 import 'package:twitter_clone/my_pages/home_page.dart';
+import 'package:twitter_clone/my_pages/messages_page.dart';
+import 'package:twitter_clone/my_pages/notifation_main.dart';
+import 'package:twitter_clone/my_pages/trend_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -26,38 +29,75 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  HomePage? pageHome;
+  // HomePage? pageHome;
   // NotificationsPage? pageNotifications;
-  // EklemeSayfasi? sayfaEkle;
-  // ProfilSayfasi? sayfaKisiler;
+  // TrendPage? pageTrend;
+  // MessageScreen? pageMessages;
 
-  var keyHomePage = const PageStorageKey("key_home_page");
-  var keySearch = const PageStorageKey("key_search_page");
-  var keyNotification = const PageStorageKey("key_notification_page");
-  var keyMessages = const PageStorageKey("key_message_page");
+  // var keyHomePage = const PageStorageKey("key_home_page");
+  // var keyTrend = const PageStorageKey("key_trend_page");
+  // var keyNotification = const PageStorageKey("key_notification_page");
+  // var keyMessages = const PageStorageKey("key_message_page");
 
-  List<Widget>? allPages;
+  // List<Widget>? allPages;
   int _selectedIndex = 0;
 
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    // pageHome = HomePage(keyHomePage);
-    // pageNotifications = NotificationsPage(keyNotification);
-    // sayfaArama = AramaSayfasi(keyArama);
-    // sayfaEkle = EklemeSayfasi(keyEkleme);
-    // sayfaKisiler = ProfilSayfasi();
-    // allPages = [pageHome!, sayfaArama!, sayfaEkle!];
+  // void initState() {
+  //   super.initState();
+  //   pageHome = HomePage(keyHomePage);
+  //   pageNotifications = NotificationsPage(key: keyNotification);
+  //   pageTrend = TrendPage(key: keyTrend);
+  //   pageMessages = MessageScreen(
+  //     key: keyMessages,
+  //   );
+  //    allPages = [pageHome!,pageTrend!, pageNotifications!,  pageMessages!];
+  // }
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
+  List pages = [
+    const HomePage(),
+    const TrendPage(),
+    const NotificationsPage(),
+    const MessageScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      drawer: DrawerMenu(),
-      // body: _selectedIndex <= allPages!.length - 1
-      //     ? allPages![_selectedIndex]
-      //     : allPages![0],
-      body: HomePage(),
-    );
+    return Scaffold(
+        drawer: const DrawerMenu(),
+        // body: _selectedIndex <= allPages!.length - 1
+        //     ? allPages![_selectedIndex]
+        //     : allPages![0],
+        body: pages[_selectedIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              label: "",
+              backgroundColor: Pallete.primaryColor,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "",
+              backgroundColor: Pallete.primaryColor,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications_outlined),
+              label: "",
+              backgroundColor: Pallete.primaryColor,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.mail_outline),
+              label: "",
+              backgroundColor: Pallete.primaryColor,
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.blue,
+          onTap: _onItemTapped,
+        ));
   }
 }
