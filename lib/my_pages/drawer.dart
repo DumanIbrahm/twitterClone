@@ -11,188 +11,194 @@ class DrawerMenu extends StatefulWidget {
 class _DrawerMenuState extends State<DrawerMenu> {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      backgroundColor: Pallete.primaryColor,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.only(left: 20.0, top: 20),
-                      child: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg"),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 20.0, right: 20),
-                      child: Icon(Icons.more_vert, color: Pallete.textColor),
-                    )
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24.0, top: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    // mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Column(
-                        children: [
-                          Row(
-                            children: const [
-                              Text(
-                                "User Name",
-                                style: TextStyle(color: Pallete.textColor),
-                              ),
-                              Icon(Icons.lock,
-                                  color: Pallete.textColor, size: 15)
-                            ],
-                          ),
-                          const Text(
-                            "@username",
-                            style: TextStyle(color: Colors.grey, fontSize: 15),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24.0),
-                  child: Row(
+    return SafeArea(
+      child: Drawer(
+        backgroundColor: Pallete.primaryColor,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
-                      Text("1000 ", style: TextStyle(color: Pallete.textColor)),
-                      Text("Takip eilen", style: TextStyle(color: Colors.grey)),
-                      SizedBox(width: 20),
-                      Text("1000 ", style: TextStyle(color: Pallete.textColor)),
-                      Text("Takipçi", style: TextStyle(color: Colors.grey)),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20.0, top: 20),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg"),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.0, right: 20),
+                        child: Icon(Icons.more_vert, color: Pallete.textColor),
+                      )
                     ],
                   ),
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 24.0, right: 32),
-              child: Divider(
-                color: Colors.grey.shade700,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24.0, top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      // mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Column(
+                          children: [
+                            Row(
+                              children: const [
+                                Text(
+                                  "User Name",
+                                  style: TextStyle(color: Pallete.textColor),
+                                ),
+                                Icon(Icons.lock,
+                                    color: Pallete.textColor, size: 15)
+                              ],
+                            ),
+                            const Text(
+                              "@username",
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 15),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24.0),
+                    child: Row(
+                      children: const [
+                        Text("1000 ",
+                            style: TextStyle(color: Pallete.textColor)),
+                        Text("Takip eilen",
+                            style: TextStyle(color: Colors.grey)),
+                        SizedBox(width: 20),
+                        Text("1000 ",
+                            style: TextStyle(color: Pallete.textColor)),
+                        Text("Takipçi", style: TextStyle(color: Colors.grey)),
+                      ],
+                    ),
+                  )
+                ],
               ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 8),
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.person_outline,
-                      size: 24,
-                    ),
-                    label: const Text(
-                      "Profil",
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all(Pallete.textColor)),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 8),
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.person_outline,
-                      size: 24,
-                    ),
-                    label: const Text(
-                      "Twitter Blue",
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all(Pallete.textColor)),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 8),
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.bookmark_border,
-                      size: 24,
-                    ),
-                    label: const Text(
-                      "Yer İşaretleri",
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all(Pallete.textColor)),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 8),
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.list_alt,
-                      size: 24,
-                    ),
-                    label: const Text(
-                      "Listeler",
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all(Pallete.textColor)),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 8),
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.person_add_alt_1,
-                      size: 24,
-                    ),
-                    label: const Text(
-                      "Takipçi İstekleri",
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all(Pallete.textColor)),
-                  ),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 24.0, right: 32),
-              child: Divider(
-                color: Colors.grey.shade700,
+              const SizedBox(
+                height: 15,
               ),
-            ),
-            const ExpansionTileExample1(),
-            const ExpansionTileExample2(),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.person),
-              style: ButtonStyle(
-                  foregroundColor:
-                      MaterialStateProperty.all(Pallete.textColor)),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(left: 24.0, right: 32),
+                child: Divider(
+                  color: Colors.grey.shade700,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: TextButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.person_outline,
+                        size: 24,
+                      ),
+                      label: const Text(
+                        "Profil",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all(Pallete.textColor)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: TextButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.person_outline,
+                        size: 24,
+                      ),
+                      label: const Text(
+                        "Twitter Blue",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all(Pallete.textColor)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: TextButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.bookmark_border,
+                        size: 24,
+                      ),
+                      label: const Text(
+                        "Yer İşaretleri",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all(Pallete.textColor)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: TextButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.list_alt,
+                        size: 24,
+                      ),
+                      label: const Text(
+                        "Listeler",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all(Pallete.textColor)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: TextButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.person_add_alt_1,
+                        size: 24,
+                      ),
+                      label: const Text(
+                        "Takipçi İstekleri",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all(Pallete.textColor)),
+                    ),
+                  )
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 24.0, right: 32),
+                child: Divider(
+                  color: Colors.grey.shade700,
+                ),
+              ),
+              const ExpansionTileExample1(),
+              const ExpansionTileExample2(),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.person),
+                style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all(Pallete.textColor)),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -32,12 +32,13 @@ class _NewMessagePageState extends State<NewMessagePage> {
 
     if (query.isNotEmpty) {
       List<String> filteredList = List<String>.empty(growable: true);
-      dummyListData.forEach((item) {
+
+      for (var item in dummyListData) {
         // Check if the item contains the query as a substring
         if (item.toLowerCase().contains(query.toLowerCase())) {
           filteredList.add(item);
         }
-      });
+      }
 
       setState(() {
         items.clear();
@@ -57,64 +58,75 @@ class _NewMessagePageState extends State<NewMessagePage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Yeni Mesaj'),
+        title: const Text('Yeni Mesaj'),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 10,
-              ),
-              TextField(
-                style: TextStyle(color: Colors.white),
-                onChanged: (String value) {
-                  filterSearchResults(value);
-                },
-                controller: editingController,
-                decoration: InputDecoration(
-                  //  labelText: "Kişileri ve grupları ara",
-                  hintText: "Kişileri ve grupları ara",
-                  hintStyle: TextStyle(color: Colors.white),
-                    iconColor: Colors.white,
-                  prefixIcon: Icon(Icons.search, color: Colors.white,),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
+        child: Column(
+          children: <Widget>[
+            const SizedBox(
+              height: 10,
+            ),
+            TextField(
+              style: const TextStyle(color: Colors.white),
+              onChanged: (String value) {
+                filterSearchResults(value);
+              },
+              controller: editingController,
+              decoration: const InputDecoration(
+                //  labelText: "Kişileri ve grupları ara",
+                hintText: "Kişileri ve grupları ara",
+                hintStyle: TextStyle(color: Colors.white),
+                iconColor: Colors.white,
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: Colors.white,
                 ),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: items.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      onTap: () {
-                        _onTileTapped(index);
-                      },
-                      title: Text(" ${items[index]} ", style: TextStyle(color: Colors.white),),
-                    );
-                  })
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ListView.builder(
+                shrinkWrap: true,
+                itemCount: items.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    onTap: () {
+                      _onTileTapped(index);
+                    },
+                    title: Text(
+                      " ${items[index]} ",
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  );
+                })
+          ],
         ),
       ),
     );
   }
 
+  // void _onTileTapped() {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //         builder: (context,index) => MessageToPerson(
+  //               item: items[index], index: index,
+  //             )),
+  //   );
+  // }
 
-void _onTileTapped(int index) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (context) => MessageToPerson(
-        item: items[index],
-        index: index,
+  void _onTileTapped(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MessageToPerson(
+          item: items[index],
+          index: index,
+        ),
       ),
-    ),
-  );
-}
-
-
+    );
+  }
 }

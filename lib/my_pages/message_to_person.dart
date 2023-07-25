@@ -30,49 +30,54 @@ class _MessageToPersonState extends State<MessageToPerson> {
             Navigator.pop(context);
           },
         ),
-        title: Text('${widget.item}', style: TextStyle(color: Colors.white),),
-        actions: [
+
+        title: Text(
+          widget.item,
+          style: const TextStyle(color: Colors.white),
+        ),
+        actions: const [
           Icon(Icons.info, color: Colors.white),
         ],
       ),
       body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-    //Icon(Icons.photo),
-        TextField(
-          decoration: InputDecoration(
-            icon: Icon(Icons.photo, color: Colors.white,),
-            hintText: 'Mesajınızı girin...',
-            hintStyle: TextStyle(color: Colors.white),
-            fillColor: Colors.white,
-            border: OutlineInputBorder(),
+          //Icon(Icons.photo),
+          const TextField(
+            decoration: InputDecoration(
+              icon: Icon(
+                Icons.photo,
+                color: Colors.white,
+              ),
+              hintText: 'Mesajınızı girin...',
+              hintStyle: TextStyle(color: Colors.white),
+              fillColor: Colors.white,
+              border: OutlineInputBorder(),
+            ),
+            style: TextStyle(color: Colors.white),
           ),
-          style: TextStyle(color: Colors.white),
-        ),
-        SizedBox(height: 20),
-        ElevatedButton(
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.black)),
-          onPressed: () {
-            // Mesaj gönderildiğinde burada yapılacak işlemler
-            _sendMessage('Örnek mesaj'); // Örnek mesaj gönderiyoruz
-          },
-          child: Text('Mesaj Gönder',style: TextStyle(color: Colors.blue),),
-        ),
-      
-      
-      
+          const SizedBox(height: 20),
+          ElevatedButton(
+            style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.black)),
+            onPressed: () {
+              // Mesaj gönderildiğinde burada yapılacak işlemler
+              _sendMessage('Örnek mesaj'); // Örnek mesaj gönderiyoruz
+            },
+            child: const Text(
+              'Mesaj Gönder',
+              style: TextStyle(color: Colors.blue),
+            ),
+          ),
         ],
-
-
       ),
     );
   }
-  
-  
-    void _sendMessage(String message) {
+
+  void _sendMessage(String message) {
     // Burada mesaj gönderme işlemlerini yapabilirsiniz.
     // Örneğin, mesajı bir API'ye göndermek, veritabanına kaydetmek vb.
-    print('Gönderilen mesaj: $message');
   }
 }
