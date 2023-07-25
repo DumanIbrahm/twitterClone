@@ -111,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
                             color: Colors.grey.shade700,
@@ -136,17 +136,18 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
+                      child: SizedBox(
                         height: 50,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey.shade700),
-                        ),
                         width: buttonWidth,
-                        child: const TextField(
-                          style: TextStyle(color: Colors.white),
+                        child: TextField(
+                          style: const TextStyle(color: Colors.white),
                           decoration: InputDecoration(
-                            focusedBorder: OutlineInputBorder(),
-                            label: Text("Phone, e-mail, or username",
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Colors.grey.shade700, width: 1.0)),
+                            focusedBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.blue)),
+                            label: const Text("Phone, e-mail, or username",
                                 style: TextStyle(color: Colors.white)),
                           ),
                         ),
@@ -205,11 +206,19 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        "Don't have an account? Sign up",
-                        style: TextStyle(color: Colors.black),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Don't have an account?",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          TextButton(
+                              onPressed: () {}, child: const Text("Sign up"))
+                        ],
                       ),
                     ),
                   ],
