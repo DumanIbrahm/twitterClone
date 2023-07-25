@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/my_pages/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -168,7 +169,12 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const HomePage();
+                            }));
+                          },
                           child: const Text(
                             "Next",
                             style: TextStyle(
