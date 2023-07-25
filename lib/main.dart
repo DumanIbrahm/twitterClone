@@ -29,29 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // HomePage? pageHome;
-  // NotificationsPage? pageNotifications;
-  // TrendPage? pageTrend;
-  // MessageScreen? pageMessages;
-
-  // var keyHomePage = const PageStorageKey("key_home_page");
-  // var keyTrend = const PageStorageKey("key_trend_page");
-  // var keyNotification = const PageStorageKey("key_notification_page");
-  // var keyMessages = const PageStorageKey("key_message_page");
-
-  // List<Widget>? allPages;
   int _selectedIndex = 0;
 
-  // void initState() {
-  //   super.initState();
-  //   pageHome = HomePage(keyHomePage);
-  //   pageNotifications = NotificationsPage(key: keyNotification);
-  //   pageTrend = TrendPage(key: keyTrend);
-  //   pageMessages = MessageScreen(
-  //     key: keyMessages,
-  //   );
-  //    allPages = [pageHome!,pageTrend!, pageNotifications!,  pageMessages!];
-  // }
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -68,9 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: const DrawerMenu(),
-        // body: _selectedIndex <= allPages!.length - 1
-        //     ? allPages![_selectedIndex]
-        //     : allPages![0],
         body: pages[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
