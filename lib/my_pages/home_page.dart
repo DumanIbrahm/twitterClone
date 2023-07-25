@@ -45,52 +45,54 @@ class _AnaSayfaState extends State<AnaSayfa>
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      initialIndex: 0,
-      child: Scaffold(
-        drawer: DrawerMenu(),
-        appBar: AppBar(
-          backgroundColor: Pallete.primaryColor,
-          bottom: const TabBar(
-            indicatorColor: Colors.blue,
-            labelColor: Pallete.textColor,
-            tabs: <Widget>[
-              Tab(
-                text: "Sana Özel",
-              ),
-              Tab(
-                text: "Takip Edilenler",
-              ),
-            ],
+    return SafeArea(
+      child: DefaultTabController(
+        length: 2,
+        initialIndex: 0,
+        child: Scaffold(
+          drawer: DrawerMenu(),
+          appBar: AppBar(
+            backgroundColor: Pallete.primaryColor,
+            bottom: const TabBar(
+              indicatorColor: Colors.blue,
+              labelColor: Pallete.textColor,
+              tabs: <Widget>[
+                Tab(
+                  text: "Sana Özel",
+                ),
+                Tab(
+                  text: "Takip Edilenler",
+                ),
+              ],
+            ),
           ),
+          body: TabBarView(children: [
+            ListView(
+              children: [
+                //üst taraftaki profil listesi
+                //Card
+                materialMethod(context),
+                materialMethod2(context),
+                materialMethod(context),
+                materialMethod2(context),
+                materialMethod2(context),
+                //Card
+              ],
+            ),
+            ListView(
+              children: [
+                //üst taraftaki profil listesi
+                //Card
+                materialMethod2(context),
+                materialMethod(context),
+                materialMethod2(context),
+                materialMethod(context),
+                materialMethod2(context),
+                //Card
+              ],
+            ),
+          ]),
         ),
-        body: TabBarView(children: [
-          ListView(
-            children: [
-              //üst taraftaki profil listesi
-              //Card
-              materialMethod(context),
-              materialMethod2(context),
-              materialMethod(context),
-              materialMethod2(context),
-              materialMethod2(context),
-              //Card
-            ],
-          ),
-          ListView(
-            children: [
-              //üst taraftaki profil listesi
-              //Card
-              materialMethod2(context),
-              materialMethod(context),
-              materialMethod2(context),
-              materialMethod(context),
-              materialMethod2(context),
-              //Card
-            ],
-          ),
-        ]),
       ),
     );
   }
@@ -203,85 +205,94 @@ class _AnaSayfaState extends State<AnaSayfa>
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Row(
-                        children: const [
-                          Icon(
-                            Icons.comment_outlined,
-                            color: Pallete.textGrey,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "661",
-                            style: TextStyle(color: Pallete.textGrey),
-                          ),
-                          SizedBox(
-                            width: 25,
-                          ),
-                        ],
+                      Expanded(
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.comment_outlined,
+                              color: Pallete.textGrey,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "661",
+                              style: TextStyle(color: Pallete.textGrey),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                          ],
+                        ),
                       ),
-                      Row(
-                        children: const [
-                          Icon(
-                            Icons.repeat_outlined,
-                            color: Pallete.textGrey,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "3.077",
-                            style: TextStyle(color: Pallete.textGrey),
-                          ),
-                          SizedBox(
-                            width: 25,
-                          ),
-                        ],
+                      Expanded(
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.repeat_outlined,
+                              color: Pallete.textGrey,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "3.077",
+                              style: TextStyle(color: Pallete.textGrey),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                          ],
+                        ),
                       ),
-                      Row(
-                        children: const [
-                          Icon(
-                            Icons.favorite_border_outlined,
-                            color: Pallete.textGrey,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "43.7B",
-                            style: TextStyle(color: Pallete.textGrey),
-                          ),
-                          SizedBox(
-                            width: 25,
-                          ),
-                        ],
+                      Expanded(
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.favorite_border_outlined,
+                              color: Pallete.textGrey,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "43.7B",
+                              style: TextStyle(color: Pallete.textGrey),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                          ],
+                        ),
                       ),
-                      Row(
-                        children: const [
-                          Icon(
-                            Icons.query_stats,
-                            color: Pallete.textGrey,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "2.5Mn",
-                            style: TextStyle(color: Pallete.textGrey),
-                          ),
-                          SizedBox(
-                            width: 25,
-                          ),
-                        ],
+                      Expanded(
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.query_stats,
+                              color: Pallete.textGrey,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "2.5Mn",
+                              style: TextStyle(color: Pallete.textGrey),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                          ],
+                        ),
                       ),
-                      const Icon(
-                        Icons.share_outlined,
-                        color: Pallete.textGrey,
+                      const Expanded(
+                        child: Icon(
+                          Icons.share_outlined,
+                          color: Pallete.textGrey,
+                        ),
                       )
                     ],
-                  ),
-                ],
+                  ),],
               ),
             ),
           ],

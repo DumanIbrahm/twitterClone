@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/NotificationsPages/Settings/setting_for_notifications.dart';
+import 'package:twitter_clone/constant.dart';
 import 'package:twitter_clone/my_pages/bottom_navigation_bar.dart';
 import 'package:twitter_clone/my_pages/drawer.dart';
 
@@ -23,8 +24,6 @@ Widget tabController(context) {
       initialIndex: 0,
       length: tabsCount,
       child: Scaffold(
-        bottomNavigationBar: const BottomNavigationBars(
-        ),
         drawer: const DrawerMenu(),
         backgroundColor: Colors.black,
         appBar: AppBar(
@@ -34,19 +33,19 @@ Widget tabController(context) {
             "Bildirimler",
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          actions:  [
+          actions: [
             Padding(
               padding: EdgeInsets.only(right: 10, left: 10),
               child: IconButton(
-                onPressed: (){
+                onPressed: () {
                   Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SettingsForNotiPage()),
-                        (route) => true,
-                      );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SettingsForNotiPage()),
+                    (route) => true,
+                  );
                 },
-                icon: Icon(Icons.settings),
+                icon: const Icon(Icons.settings),
               ),
             )
           ],
@@ -68,24 +67,24 @@ Widget tabController(context) {
           ),
         ),
         body: TabBarView(children: <Widget>[
-          const Padding(
-            padding: EdgeInsets.only(top: 10),
-            child: ListTile(
-              tileColor: Color.fromRGBO(5, 20, 33, 12.94),
-              leading: Icon(Icons.add),
-              title: Text(
-                "@sadsasa adlı hesabına 15 Temmuz 2023 tarihinde yeni bir cihazdan giriş yapıldı. Bunu şimdi inceleyebilirsin.",
-                style: TextStyle(color: Colors.white),
+          Column(
+            children: const [
+              ListTile(
+                //leading: Icon(Bird.twitter, size: 25, color: Pallete.twitterBlue,),
+                title: Text(
+                  "@sadsasa adlı hesabına 15 Temmuz 2023 tarihinde yeni bir cihazdan giriş yapıldı. Bunu şimdi inceleyebilirsin.",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-            ),
+            ],
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15,right: 15),
+            padding: const EdgeInsets.only(left: 15, right: 15),
             child: Center(
               child: Column(
                 children: [
                   Image.asset(
-                    "/Users/ibrahimduman/Desktop/FLUTTER/twittterr_clone/assets/images/onay.jpg",
+                    "assets/images/onaylananlar.jpg",
                   ),
                   const Text("Burada görecek bir şey yok. Henüz...",
                       style: TextStyle(
@@ -102,38 +101,51 @@ Widget tabController(context) {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
                           fixedSize: const Size(395, 55),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
-                        child: const Text("Abone ol"),
+                        child: const Text(
+                          "Abone ol",
+                          style: TextStyle(color: Colors.black, fontSize: 20),
+                        ),
                       )),
-                      const Padding(
-                        padding:  EdgeInsets.only(top: 8.0),
-                        child:  Text("Sınırlı bir süre için geçerli teklif : ₺ 2.199,00/yıl",style: TextStyle(color: Colors.white)),
-                      )
+                  const Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                    child: Text(
+                        "Sınırlı bir süre için geçerli teklif : ₺ 2.199,00/yıl",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
+                  )
                 ],
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10.0,),
+            padding: const EdgeInsets.only(
+              left: 10.0,
+            ),
             child: SizedBox(
               child: Center(
-                child: Column(children: const [
-                    Text("Sohbete katıl\n",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 30)),
-                    Text("Twitter'da bir Twette veya yanıtta senden bahsedildiğinde burada görebilirsin.",style: TextStyle(
-                                color: Colors.white),)
-                ],),
+                child: Column(
+                  children: [
+                    Image.asset("assets/images/bahsedenler.jpg"),
+                    const Text("Sohbete katıl\n",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30)),
+                    const Text(
+                      "Twitter'da bir Twette veya yanıtta senden bahsedildiğinde burada görebilirsin.",
+                      style: TextStyle(color: Colors.white),
+                    )
+                  ],
+                ),
               ),
             ),
           )
         ]),
       ));
 }
-

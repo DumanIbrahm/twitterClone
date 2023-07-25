@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/NotificationsPages/notificiation_main.dart';
 import 'package:twitter_clone/my_pages/bottom_navigation_bar.dart';
 import 'package:twitter_clone/my_pages/drawer.dart';
 import 'package:twitter_clone/my_pages/home_page.dart';
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // body: _selectedIndex <= allPages!.length - 1
       //     ? allPages![_selectedIndex]
       //     : allPages![0],
-      body: HomePage(),
+      body: NotificationsPage(),
     );
   }
 }

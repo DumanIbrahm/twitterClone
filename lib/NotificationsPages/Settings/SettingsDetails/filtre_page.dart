@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/NotificationsPages/Settings/SettingsDetails/mute_notification.dart';
 
 class FiltelerPage extends StatefulWidget {
   const FiltelerPage({super.key});
@@ -43,12 +44,12 @@ class _FiltelerPageState extends State<FiltelerPage> {
             ListTile(
               title: const Text("Sessize alınan bildirimler", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
               trailing: IconButton(onPressed: (){
-                // Navigator.pushAndRemoveUntil(
-                //         context,
-                //         MaterialPageRoute(
-                //             builder: (context) => const SessizeAlinanBildirimler()),
-                //         (route) => true,
-                //       );
+                Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MuteNotification()),
+                        (route) => true,
+                      );
               }, icon: const Icon(Icons.arrow_forward_ios, color: Colors.white,)),
             )
           ],

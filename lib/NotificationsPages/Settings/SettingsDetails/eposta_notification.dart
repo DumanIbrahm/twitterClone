@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/constant.dart';
 
 class EPostaBildirim extends StatefulWidget {
   const EPostaBildirim({super.key});
@@ -61,7 +62,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
           ListTile(
             title: const Text("E-postta bildirimleri", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
             trailing: Switch(
-              activeColor: Colors.green,
+              activeColor: Pallete.onSwitchColor,
+                
                 value: _isSwitch,
                 onChanged: (value) {
                   setState(() {
@@ -81,7 +83,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Yeni bildirimler",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch1,
                 onChanged: (value) {
                   setState(() {
@@ -94,7 +97,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Direkt Mesajlar",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch2,
                 onChanged: (value) {
                   setState(() {
@@ -107,7 +111,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Sana e-posta ile gönderilern Tweetler",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch3,
                 onChanged: (value) {
                   setState(() {
@@ -139,7 +144,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Tweetlerinin performansı hakkında güncellemeler",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch4,
                 onChanged: (value) {
                   setState(() {
@@ -154,7 +160,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Twitter ürün ve özelliklerindeki güncellemelerle ilgili haberler",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch5,
                 onChanged: (value) {
                   setState(() {
@@ -167,7 +174,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Twitter'dan daha iyi bir şekilde yararlanmakla ilgili ipuçları",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch6,
                 onChanged: (value) {
                   setState(() {
@@ -180,7 +188,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Twitter'a son girdiğinden bu yana kaçırdıkların",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch7,
                 onChanged: (value) {
                   setState(() {
@@ -193,7 +202,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "İş ortağı ürünleri ve üçüncü parti hizmetlerinde Twitter ile ilgili haberler",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch8,
                 onChanged: (value) {
                   setState(() {
@@ -206,7 +216,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Twitter araştırma anketlerine katılım",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch9,
                 onChanged: (value) {
                   setState(() {
@@ -219,7 +230,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Önerilen hesaplarla ilgili tavsiyeler",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch10,
                 onChanged: (value) {
                   setState(() {
@@ -232,7 +244,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Takip ettiğin son hesaplara göre öneriler",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch11,
                 onChanged: (value) {
                   setState(() {
@@ -245,7 +258,8 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Twitter ticari ürünleri hakkında ipuçları",
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 trailing: Switch(
-                  activeColor: Colors.green,
+                  activeColor: Pallete.onSwitchColor,
+                  
                 value: _isSwitch12,
                 onChanged: (value) {
                   setState(() {

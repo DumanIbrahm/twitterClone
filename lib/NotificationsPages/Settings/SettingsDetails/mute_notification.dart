@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/constant.dart';
 
 class MuteNotification extends StatefulWidget {
   const MuteNotification({super.key});
@@ -36,7 +37,7 @@ class _MuteNotificationState extends State<MuteNotification> {
           ListTile(
               title:  Text("Takip etmediğin kişiler", style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
               trailing: Switch(
-                activeColor: Colors.green,
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitched,
                 onChanged: (value){ 
                   setState(() {
@@ -47,7 +48,7 @@ class _MuteNotificationState extends State<MuteNotification> {
           ListTile(
               title:  Text("Seni takip etmeyen kişiler", style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
               trailing: Switch(
-                activeColor: Colors.green,
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitched1,
                 onChanged: (value){ 
                   setState(() {
@@ -58,7 +59,7 @@ class _MuteNotificationState extends State<MuteNotification> {
           ListTile(
               title:  Text("Hesabı yeni olan kişiler", style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
               trailing: Switch(
-                activeColor: Colors.green,
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitched2,
                 onChanged: (value){ 
                   setState(() {
@@ -69,7 +70,7 @@ class _MuteNotificationState extends State<MuteNotification> {
           ListTile(
               title:  Text("Varsayılan profil fotoğrafını kullanan kişiler", style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
               trailing: Switch(
-                activeColor: Colors.green,
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitched3,
                 onChanged: (value){ 
                   setState(() {
@@ -80,7 +81,7 @@ class _MuteNotificationState extends State<MuteNotification> {
           ListTile(
               title:  Text("E-posta adresini doğrulamamış kişiler", style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
               trailing: Switch(
-                activeColor: Colors.green,
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitched4,
                 onChanged: (value){ 
                   setState(() {
@@ -91,7 +92,7 @@ class _MuteNotificationState extends State<MuteNotification> {
           ListTile(
               title:  Text("Telefon numarası doğrulanmamış kişiler", style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
               trailing: Switch(
-                activeColor: Colors.green,
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitched5,
                 onChanged: (value){ 
                   setState(() {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/NotificationsPages/Settings/SettingsDetails/eposta_notification.dart';
 import 'package:twitter_clone/NotificationsPages/Settings/SettingsDetails/open_notifications.dart';
+import 'package:twitter_clone/NotificationsPages/Settings/SettingsDetails/sms_notification.dart';
 
 class Preferences extends StatefulWidget {
   const Preferences({super.key});
@@ -82,12 +84,12 @@ class _PreferencesState extends State<Preferences> {
                     color: Colors.white, fontWeight: FontWeight.bold)),
             trailing: IconButton(
                 onPressed: () {
-                  //  Navigator.pushAndRemoveUntil(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) => const SMSBildirim()),
-                  //       (route) => true,
-                  //     );
+                   Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SMSBildirim()),
+                        (route) => true,
+                      );
                 },
                 icon: const Icon(
                   Icons.arrow_forward_ios_sharp,
@@ -101,12 +103,12 @@ class _PreferencesState extends State<Preferences> {
                     color: Colors.white, fontWeight: FontWeight.bold)),
             trailing: IconButton(
                 onPressed: () {
-                  //  Navigator.pushAndRemoveUntil(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) => const EPostaBildirim()),
-                  //       (route) => true,
-                  //     );
+                   Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const EPostaBildirim()),
+                        (route) => true,
+                      );
                 },
                 icon: const Icon(
                   Icons.arrow_forward_ios_sharp,
