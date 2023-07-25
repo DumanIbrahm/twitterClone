@@ -59,6 +59,9 @@ class _MessageToPersonState extends State<MessageToPerson> {
           },
           child: Text('Mesaj Gönder',style: TextStyle(color: Colors.blue),),
         ),
+      
+      
+      
         ],
 
 

@@ -103,15 +103,6 @@ class _NewMessagePageState extends State<NewMessagePage> {
     );
   }
 
-  // void _onTileTapped() {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //         builder: (context,index) => MessageToPerson(
-  //               item: items[index], index: index,
-  //             )),
-  //   );
-  // }
 
 void _onTileTapped(int index) {
   Navigator.push(
