@@ -6,7 +6,6 @@ class NewMessagePage extends StatefulWidget {
   final String? title;
 
   @override
-  // ignore: library_private_types_in_public_api
   _NewMessagePageState createState() => _NewMessagePageState();
 }
 
@@ -33,6 +32,7 @@ class _NewMessagePageState extends State<NewMessagePage> {
 
     if (query.isNotEmpty) {
       List<String> filteredList = List<String>.empty(growable: true);
+
       for (var item in dummyListData) {
         // Check if the item contains the query as a substring
         if (item.toLowerCase().contains(query.toLowerCase())) {
