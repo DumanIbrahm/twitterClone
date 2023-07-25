@@ -192,7 +192,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
               const ExpansionTileExample2(),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.person),
+                icon: const Icon(Icons.person),
                 style: ButtonStyle(
                     foregroundColor:
                         MaterialStateProperty.all(Pallete.textColor)),

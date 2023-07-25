@@ -58,10 +58,9 @@ class _MuteNotificationState extends State<MuteNotification> {
           textAlign: TextAlign.left,
         )),
         ListTile(
-          title: Text(
+          title: const Text(
             "Takip etmediğin kişiler",
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           trailing: Switch(
               activeColor: Pallete.onSwitchColor,
@@ -73,10 +72,9 @@ class _MuteNotificationState extends State<MuteNotification> {
               }),
         ),
         ListTile(
-          title: Text(
+          title: const Text(
             "Seni takip etmeyen kişiler",
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           trailing: Switch(
               activeColor: Pallete.onSwitchColor,
@@ -88,10 +86,9 @@ class _MuteNotificationState extends State<MuteNotification> {
               }),
         ),
         ListTile(
-          title: Text(
+          title: const Text(
             "Hesabı yeni olan kişiler",
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           trailing: Switch(
               activeColor: Pallete.onSwitchColor,
@@ -103,10 +100,9 @@ class _MuteNotificationState extends State<MuteNotification> {
               }),
         ),
         ListTile(
-          title: Text(
+          title: const Text(
             "Varsayılan profil fotoğrafını kullanan kişiler",
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           trailing: Switch(
               activeColor: Pallete.onSwitchColor,
@@ -118,10 +114,9 @@ class _MuteNotificationState extends State<MuteNotification> {
               }),
         ),
         ListTile(
-          title: Text(
+          title: const Text(
             "E-posta adresini doğrulamamış kişiler",
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           trailing: Switch(
               activeColor: Pallete.onSwitchColor,
@@ -133,10 +128,9 @@ class _MuteNotificationState extends State<MuteNotification> {
               }),
         ),
         ListTile(
-          title: Text(
+          title: const Text(
             "Telefon numarası doğrulanmamış kişiler",
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           trailing: Switch(
               activeColor: Pallete.onSwitchColor,

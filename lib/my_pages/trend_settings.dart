@@ -23,13 +23,13 @@ class _trendSettings extends State<TrendSettings> {
                 MaterialPageRoute(builder: (context) => TrendPage()),
                 (route) => false);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Pallete.textColor,
           ),
         ),
         title: ListTile(
-          title: Text(
+          title: const Text(
             "Keşfetme Ayarları",
             style: TextStyle(
               color: Pallete.textColor,
@@ -48,8 +48,8 @@ class _trendSettings extends State<TrendSettings> {
       body: ListView(
         children: [
           ListTile(
-            title: Padding(
-              padding: const EdgeInsets.only(
+            title: const Padding(
+              padding: EdgeInsets.only(
                 left: 15,
                 bottom: 10,
               ),
@@ -63,7 +63,7 @@ class _trendSettings extends State<TrendSettings> {
               ),
             ),
             subtitle: ListTile(
-              title: Text(
+              title: const Text(
                 "Bu konumdaki içeriği göster",
                 style: TextStyle(
                   color: Pallete.textColor,
@@ -85,8 +85,8 @@ class _trendSettings extends State<TrendSettings> {
             ),
           ),
           ListTile(
-            title: Padding(
-              padding: const EdgeInsets.only(
+            title: const Padding(
+              padding: EdgeInsets.only(
                 left: 15,
                 bottom: 10,
               ),
@@ -100,7 +100,7 @@ class _trendSettings extends State<TrendSettings> {
               ),
             ),
             subtitle: ListTile(
-              title: Text(
+              title: const Text(
                 "Gündemde ilgini çekebilecekler",
                 style: TextStyle(
                   color: Pallete.textColor,

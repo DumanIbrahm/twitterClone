@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class MessageToPerson extends StatefulWidget {
   //const MessageToPerson({Key? key}) : super(key: key);
 
@@ -31,10 +32,10 @@ class _MessageToPersonState extends State<MessageToPerson> {
           },
         ),
         title: Text(
-          '${widget.item}',
-          style: TextStyle(color: Colors.white),
+          widget.item,
+          style: const TextStyle(color: Colors.white),
         ),
-        actions: [
+        actions: const [
           Icon(Icons.info, color: Colors.white),
         ],
       ),
@@ -43,7 +44,7 @@ class _MessageToPersonState extends State<MessageToPerson> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           //Icon(Icons.photo),
-          TextField(
+          const TextField(
             decoration: InputDecoration(
               icon: Icon(
                 Icons.photo,
@@ -56,7 +57,7 @@ class _MessageToPersonState extends State<MessageToPerson> {
             ),
             style: TextStyle(color: Colors.white),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
             style: ButtonStyle(
                 backgroundColor:
@@ -65,7 +66,7 @@ class _MessageToPersonState extends State<MessageToPerson> {
               // Mesaj gönderildiğinde burada yapılacak işlemler
               _sendMessage('Örnek mesaj'); // Örnek mesaj gönderiyoruz
             },
-            child: Text(
+            child: const Text(
               'Mesaj Gönder',
               style: TextStyle(color: Colors.blue),
             ),
@@ -78,6 +79,5 @@ class _MessageToPersonState extends State<MessageToPerson> {
   void _sendMessage(String message) {
     // Burada mesaj gönderme işlemlerini yapabilirsiniz.
     // Örneğin, mesajı bir API'ye göndermek, veritabanına kaydetmek vb.
-    print('Gönderilen mesaj: $message');
   }
 }

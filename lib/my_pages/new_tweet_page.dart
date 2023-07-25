@@ -27,7 +27,7 @@ class _NewTweetState extends State<NewTweet> {
             )
           ],
         ),
-        body: Container(
+        body: SizedBox(
           height: 100,
           child: Padding(
             padding: const EdgeInsets.only(top: 100.0, bottom: 100),
@@ -35,13 +35,13 @@ class _NewTweetState extends State<NewTweet> {
               children: [
                 Row(
                   children: [
-                    Text("data"),
-                    CircleAvatar(
+                    const Text("data"),
+                    const CircleAvatar(
                       backgroundImage:
                           NetworkImage("https://picsum.photos/200"),
                     ),
                     Column(
-                      children: [],
+                      children: const [],
                     ),
                   ],
                 ),
@@ -50,7 +50,7 @@ class _NewTweetState extends State<NewTweet> {
                   scrollDirection: Axis.horizontal,
                   pageSnapping: false,
                   onPageChanged: (value) {},
-                  children: [
+                  children: const [
                     Image(
                       image: AssetImage("assets/images/bahsedenler.jpg"),
                     ),

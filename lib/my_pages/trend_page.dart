@@ -7,6 +7,8 @@ import 'package:twitter_clone/my_pages/trend_topics.dart';
 import 'custom_delegate.dart';
 
 class TrendPage extends StatefulWidget {
+  const TrendPage({super.key});
+
   @override
   State<StatefulWidget> createState() => _TrendPageState();
 }

@@ -4,12 +4,15 @@ import 'package:twitter_clone/my_pages/trend_page.dart';
 import 'package:twitter_clone/my_pages/trend_settings.dart';
 
 class TrendTopics extends StatefulWidget {
+  const TrendTopics({super.key});
+
   @override
   State<StatefulWidget> createState() {
-    return new _trendTopic();
+    return _trendTopic();
   }
 }
 
+// ignore: camel_case_types
 class _trendTopic extends State<TrendTopics> {
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class _trendTopic extends State<TrendTopics> {
             Navigator.pop(context);
             Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => TrendPage()),
+                MaterialPageRoute(builder: (context) => const TrendPage()),
                 (route) => false);
           },
           icon: const Icon(
@@ -35,8 +38,10 @@ class _trendTopic extends State<TrendTopics> {
           IconButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TrendSettings()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const TrendSettings()));
             },
             icon: const Icon(Icons.settings),
           ),

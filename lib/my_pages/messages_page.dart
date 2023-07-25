@@ -17,7 +17,7 @@ class _MessageScreenState extends State<MessageScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => NewMessagePage()),
+            MaterialPageRoute(builder: (context) => const NewMessagePage()),
           );
         },
         backgroundColor: Colors.blue,
@@ -57,7 +57,8 @@ class _MessageScreenState extends State<MessageScreen> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NewMessagePage()),
+                  MaterialPageRoute(
+                      builder: (context) => const NewMessagePage()),
                 );
               },
               child: Container(
