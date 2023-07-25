@@ -93,7 +93,7 @@ class _AnaSayfaState extends State<AnaSayfa>
                   materialMethod2(context),
                   materialMethod(context),
                   materialMethod2(context),
-                  materialMethod2(context),
+                  materialMethod(context),
                   //Card
                 ],
               ),
