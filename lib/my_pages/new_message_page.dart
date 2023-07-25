@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/my_pages/message_to_person.dart';
 
 class NewMessagePage extends StatefulWidget {
   const NewMessagePage({Key? key, this.title}) : super(key: key);
@@ -53,6 +54,7 @@ class _NewMessagePageState extends State<NewMessagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text('Yeni Mesaj'),
@@ -65,6 +67,7 @@ class _NewMessagePageState extends State<NewMessagePage> {
                 height: 10,
               ),
               TextField(
+                style: TextStyle(color: Colors.white),
                 onChanged: (String value) {
                   filterSearchResults(value);
                 },
@@ -72,7 +75,9 @@ class _NewMessagePageState extends State<NewMessagePage> {
                 decoration: InputDecoration(
                   //  labelText: "Kişileri ve grupları ara",
                   hintText: "Kişileri ve grupları ara",
-                  prefixIcon: Icon(Icons.search),
+                  hintStyle: TextStyle(color: Colors.white),
+                    iconColor: Colors.white,
+                  prefixIcon: Icon(Icons.search, color: Colors.white,),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
@@ -85,7 +90,10 @@ class _NewMessagePageState extends State<NewMessagePage> {
                   itemCount: items.length,
                   itemBuilder: (context, index) {
                     return ListTile(
-                      title: Text(" ${items[index]} "),
+                      onTap: () {
+                        _onTileTapped(index);
+                      },
+                      title: Text(" ${items[index]} ", style: TextStyle(color: Colors.white),),
                     );
                   })
             ],
@@ -94,4 +102,28 @@ class _NewMessagePageState extends State<NewMessagePage> {
       ),
     );
   }
+
+  // void _onTileTapped() {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //         builder: (context,index) => MessageToPerson(
+  //               item: items[index], index: index,
+  //             )),
+  //   );
+  // }
+
+void _onTileTapped(int index) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => MessageToPerson(
+        item: items[index],
+        index: index,
+      ),
+    ),
+  );
+}
+
+
 }

@@ -1,78 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/my_pages/bottom_navigation_bar.dart';
+import 'package:twitter_clone/my_pages/drawer.dart';
+import 'package:twitter_clone/my_pages/home_page.dart';
 import 'package:twitter_clone/my_pages/messages_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-      
-        primarySwatch: Colors.blue,
-      ),
-        debugShowCheckedModeBanner: false,
-      home: const MessageScreen(),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Material App',
+      home: MessageScreen(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  HomePage? pageHome;
+  // NotificationsPage? pageNotifications;
+  // EklemeSayfasi? sayfaEkle;
+  // ProfilSayfasi? sayfaKisiler;
 
-  void _incrementCounter() {
-    setState(() {
-    
-      _counter++;
-    });
+  var keyHomePage = const PageStorageKey("key_home_page");
+  var keySearch = const PageStorageKey("key_search_page");
+  var keyNotification = const PageStorageKey("key_notification_page");
+  var keyMessages = const PageStorageKey("key_message_page");
+
+  List<Widget>? allPages;
+  int _selectedIndex = 0;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // pageHome = HomePage(keyHomePage);
+    // pageNotifications = NotificationsPage(keyNotification);
+    // sayfaArama = AramaSayfasi(keyArama);
+    // sayfaEkle = EklemeSayfasi(keyEkleme);
+    // sayfaKisiler = ProfilSayfasi();
+    // allPages = [pageHome!, sayfaArama!, sayfaEkle!];
   }
 
   @override
   Widget build(BuildContext context) {
-  
-    return Scaffold(
-      appBar: AppBar(
-      
-        title: Text(widget.title),
-      ),
-      body: Center(
-        
-        child: Column(
-      
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    return const Scaffold(
+      bottomNavigationBar: BottomNavigationBars(),
+      drawer: DrawerMenu(),
+      // body: _selectedIndex <= allPages!.length - 1
+      //     ? allPages![_selectedIndex]
+      //     : allPages![0],
+      body: HomePage(),
     );
   }
 }
-

@@ -30,7 +30,9 @@ class _MessageScreenState extends State<MessageScreen> {
           left: 15,
           right: 15,
         ),
+        
         child: Column(
+          
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
