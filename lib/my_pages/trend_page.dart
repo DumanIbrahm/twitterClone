@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/constant.dart';
-import 'package:twitter_clone/my_pages/bottom_navigation_bar.dart';
 import 'package:twitter_clone/my_pages/drawer.dart';
 import 'package:twitter_clone/my_pages/trend_settings.dart';
 import 'package:twitter_clone/my_pages/trend_topics.dart';
@@ -241,7 +240,6 @@ class _TrendPageState extends State<TrendPage> {
           ),
         ],
       ),
-      bottomNavigationBar: const BottomNavigationBars(),
     );
   }
 }
