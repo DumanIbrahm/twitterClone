@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/NotificationsPages/Settings/SettingsDetails/populer_tweets.dart';
 import 'package:twitter_clone/constant.dart';
 
 class EPostaBildirim extends StatefulWidget {
@@ -133,9 +134,14 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 ],
               ),
             ),
-                trailing:IconButton(onPressed: (){}, icon: IconButton(
-                  onPressed: (){},
-                  icon: const Icon(Icons.arrow_forward_ios)), color: Colors.white,)
+                trailing:IconButton(onPressed: (){
+                  Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PopularTweets()),
+                        (route) => true,
+                      );
+                }, icon: Icon(Icons.arrow_forward_ios), color: Colors.white, iconSize: 15,)
                   
                 
           ),
