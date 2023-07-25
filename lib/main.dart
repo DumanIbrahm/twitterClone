@@ -73,6 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
         //     : allPages![0],
         body: pages[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Pallete.primaryColor,
+          unselectedItemColor: Pallete.textColor,
+          unselectedFontSize: 1,
+          selectedFontSize: 1,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined),
