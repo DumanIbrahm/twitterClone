@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/my_pages/navigator_page.dart';
+import 'package:twitter_clone/my_pages/sign_up_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -223,7 +224,17 @@ class _LoginPageState extends State<LoginPage> {
                             style: TextStyle(color: Colors.white),
                           ),
                           TextButton(
-                              onPressed: () {}, child: const Text("Sign up"))
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return SignUpPage();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: const Text("Sign up"))
                         ],
                       ),
                     ),
