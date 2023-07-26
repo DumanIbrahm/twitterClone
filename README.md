@@ -1,16 +1,25 @@
-# twitter_clone
+# TWITTER CLONE
 
-A new Flutter project.
+We replicated the Twitter app.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# Developers
+- [Enes Baysal](https://github.com/n3sB)
+- [İbrahim Duman](https://github.com/DumanIbrahm)
+- [Nigar Selek](https://github.com/Nigarselekk)
+- [Özge Havva Şahin](https://github.com/OzgeHavvaSahin)
+- [Özgür Cansız](https://github.com/freecnsz)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Some of the photos from our app.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="381" alt="Screen Shot 2023-07-26 at 15 52 58" src="https://github.com/n3sB/twitterClone/assets/94488767/aff59fbf-46ba-4c54-984d-eb42bec43f03">
+<img width="381" alt="Screen Shot 2023-07-26 at 15 53 02" src="https://github.com/n3sB/twitterClone/assets/94488767/c2887c4b-a7d6-4e63-8a09-80a012393887">
+
+
+<img width="381" alt="Screen Shot 2023-07-26 at 15 53 07" src="https://github.com/n3sB/twitterClone/assets/94488767/77bd5941-0c8d-486e-ad51-9cc9933f93e4">
+<img width="381" alt="Screen Shot 2023-07-26 at 15 53 10" src="https://github.com/n3sB/twitterClone/assets/94488767/60ba288a-8742-4c32-b114-b01d37b9635b">
+
+
+<img width="381" alt="Screen Shot 2023-07-26 at 15 53 32" src="https://github.com/n3sB/twitterClone/assets/94488767/a148daa0-e21e-4a31-9ebb-796c5e360714">
+<img width="381" alt="Screen Shot 2023-07-26 at 15 53 48" src="https://github.com/n3sB/twitterClone/assets/94488767/b4d02f64-bce3-4803-9ffb-6a55d5feeb88">
