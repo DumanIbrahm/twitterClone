@@ -1,11 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/my_pages/login_page/login_password_page.dart';
-import 'package:twitter_clone/my_pages/navigator_page.dart';
 
 import 'package:twitter_clone/my_pages/sign_up_page.dart';
-
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

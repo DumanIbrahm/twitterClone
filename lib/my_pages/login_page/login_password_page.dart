@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:twitter_clone/auth.dart';
 import 'package:twitter_clone/my_pages/navigator_page.dart';
 
+// ignore: must_be_immutable
 class PasswordPage extends StatefulWidget {
   String email;
   PasswordPage({super.key, required this.email});
@@ -50,10 +51,6 @@ class _PasswordPageState extends State<PasswordPage> {
   }
 
   final User? user = Auth().currentUser;
-
-  Future<void> _signOut() async {
-    await Auth().signOut();
-  }
 
   @override
   Widget build(BuildContext context) {

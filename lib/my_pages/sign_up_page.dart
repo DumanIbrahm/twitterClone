@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/auth.dart';
-import 'package:twitter_clone/constant.dart';
-import 'package:twitter_clone/my_pages/home_page.dart';
 import 'package:twitter_clone/my_pages/login_page/login_page.dart';
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
   @override
   State<StatefulWidget> createState() => _SignUpPageState();
 }
@@ -39,7 +38,7 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
-        title: Text("Sign Up"),
+        title: const Text("Sign Up"),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -47,7 +46,7 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               TextFormField(
@@ -70,8 +69,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     if (value!.isEmpty) {
                       return "Please enter your name";
                     }
+                    return null;
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -94,8 +94,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     if (value!.isEmpty) {
                       return "Please enter your email";
                     }
+                    return null;
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -124,8 +125,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     if (value!.isEmpty) {
                       return "Please enter your password";
                     }
+                    return null;
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -160,8 +162,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     } else if (value != password) {
                       return "Passwords do not match";
                     }
+                    return null;
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 150,
               ),
               SizedBox(
@@ -184,7 +187,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()),
+                                    builder: (context) => const LoginPage()),
                                 (route) => false);
                           });
                         }
