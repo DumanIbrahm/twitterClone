@@ -1,7 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/my_pages/login_page/login_password_page.dart';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 57d7caaca37521678be9a2b8fc3d0a298c8e82e8
 import 'package:twitter_clone/my_pages/sign_up_page.dart';
 
 class LoginPage extends StatefulWidget {

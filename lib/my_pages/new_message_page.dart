@@ -8,6 +8,7 @@ class NewMessagePage extends StatefulWidget {
   final String? title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _NewMessagePageState createState() => _NewMessagePageState();
 }
 

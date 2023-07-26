@@ -35,6 +35,7 @@ class _PasswordPageState extends State<PasswordPage> {
   String errorMessage = "";
   bool isLogin = false;
   final _formkey = GlobalKey<FormState>();
+  bool passwordVisible = true;
 
   Future<void> signInWithEmailAndPassword(String email, String password) async {
     try {
@@ -52,6 +53,13 @@ class _PasswordPageState extends State<PasswordPage> {
 
   final User? user = Auth().currentUser;
 
+<<<<<<< HEAD
+=======
+  // Future<void> _signOut() async {
+  //   await Auth().signOut();
+  // }
+
+>>>>>>> 57d7caaca37521678be9a2b8fc3d0a298c8e82e8
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,8 +95,22 @@ class _PasswordPageState extends State<PasswordPage> {
                   width: 300,
                   child: TextFormField(
                       onChanged: (value) => password = value,
+                      obscureText: passwordVisible,
                       style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            passwordVisible
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              passwordVisible = !passwordVisible;
+                            });
+                          },
+                        ),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Colors.grey.shade700, width: 1.0)),
@@ -119,7 +141,7 @@ class _PasswordPageState extends State<PasswordPage> {
                       ),
                     ),
                     onPressed: () {
-                      if (_formkey.currentState!.validate()) {
+                      if (!_formkey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                               content:

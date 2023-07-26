@@ -56,12 +56,11 @@ class _TrendPageState extends State<TrendPage> {
               ),
               IconButton(
                   onPressed: () {
-                    Navigator.pop(context);
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const TrendSettings()),
-                        (route) => false);
+                        (route) => true);
                   },
                   icon: const Icon(Icons.settings))
             ],
@@ -222,14 +221,11 @@ class _TrendPageState extends State<TrendPage> {
           ),
           TextButton(
             onPressed: () {
-              setState(() {
-                Navigator.pop(context);
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const TrendTopics()),
-                    (route) => false);
-              });
+                    (route) => true);
             },
             child: const Text(
               "Daha fazla göster",

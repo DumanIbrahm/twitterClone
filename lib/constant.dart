@@ -7,4 +7,5 @@ class Pallete {
   static const Color textGrey = Color.fromRGBO(152, 158, 164, 1);
   static const Color onSwitchColor = Color.fromRGBO(0, 184, 123, 1);
   static const Color closeSwitchColor = Color.fromRGBO(38, 37, 42, 1);
+
 }

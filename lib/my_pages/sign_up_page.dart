@@ -159,8 +159,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Please enter your password";
-                    } else if (value != password) {
-                      return "Passwords do not match";
                     }
                     return null;
                   }),
@@ -172,7 +170,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 width: 420,
                 child: ElevatedButton(
                     onPressed: () {
-                      if (_formkey.currentState!.validate()) {
+                      if (!_formkey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                               content: Text('Passwords do not match')),
