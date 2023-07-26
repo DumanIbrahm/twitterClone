@@ -15,6 +15,7 @@ class _MessageScreenState extends State<MessageScreen> {
       backgroundColor: Colors.black,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const NewMessagePage()),
@@ -28,7 +29,9 @@ class _MessageScreenState extends State<MessageScreen> {
           left: 15,
           right: 15,
         ),
+
         child: Column(
+
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -57,8 +60,10 @@ class _MessageScreenState extends State<MessageScreen> {
               onPressed: () {
                 Navigator.push(
                   context,
+
                   MaterialPageRoute(
                       builder: (context) => const NewMessagePage()),
+
                 );
               },
               child: Container(
@@ -85,6 +90,8 @@ class _MessageScreenState extends State<MessageScreen> {
     );
   }
 }
+
+
 
 
 

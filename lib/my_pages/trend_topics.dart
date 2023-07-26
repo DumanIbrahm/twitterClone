@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/constant.dart';
-import 'package:twitter_clone/my_pages/trend_page.dart';
-import 'package:twitter_clone/my_pages/trend_settings.dart';
 
 class TrendTopics extends StatefulWidget {
   const TrendTopics({super.key});
@@ -21,27 +19,13 @@ class _trendTopic extends State<TrendTopics> {
       appBar: AppBar(
         backgroundColor: Pallete.primaryColor,
         title: const Text("Trend Topics"),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-            Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => const TrendPage()),
-                (route) => false);
-          },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Pallete.textColor,
-          ),
-        ),
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pop(context);
-              Navigator.push(
+              Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const TrendSettings()));
+                  MaterialPageRoute(builder: (context) => const TrendTopics()),
+                  (route) => true);
             },
             icon: const Icon(Icons.settings),
           ),

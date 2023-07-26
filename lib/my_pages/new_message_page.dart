@@ -33,6 +33,7 @@ class _NewMessagePageState extends State<NewMessagePage> {
 
     if (query.isNotEmpty) {
       List<String> filteredList = List<String>.empty(growable: true);
+
       for (var item in dummyListData) {
         // Check if the item contains the query as a substring
         if (item.toLowerCase().contains(query.toLowerCase())) {

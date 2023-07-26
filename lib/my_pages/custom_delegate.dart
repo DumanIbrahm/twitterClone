@@ -3,12 +3,16 @@ import 'package:twitter_clone/constant.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
   List<String> searchTerms = [
-    "Apple",
-    "Banana",
-    "Cherry",
-    "Durian",
-    "Mango",
-    "Fig",
+    "Twitter",
+    "Barbie",
+    "Oppenheimer",
+    "Yasin Kam",
+    "Flutter",
+    "Famous Developer İbrahim Duman",
+    "AntiG NS",
+    "ÖzgürReis",
+    "Özge Havva Şahin",
+    "Nigar"
   ];
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -87,10 +91,24 @@ class CustomSearchDelegate extends SearchDelegate {
   @override
   ThemeData appBarTheme(BuildContext context) {
     return Theme.of(context).copyWith(
-        scaffoldBackgroundColor: Pallete.primaryColor,
-        appBarTheme: const AppBarTheme(
-          color: Pallete.primaryColor,
+      scaffoldBackgroundColor: Pallete.primaryColor,
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Pallete.primaryColor,
+      ),
+      hintColor: Pallete.textColor,
+      textTheme: const TextTheme(
+        headline6: TextStyle(
+          color: Pallete.textColor,
         ),
-        hintColor: Pallete.textColor);
+      ),
+      primaryTextTheme: const TextTheme(
+        headline6: TextStyle(color: Colors.white),
+      ),
+      inputDecorationTheme: const InputDecorationTheme(
+        hintStyle: TextStyle(
+          color: Pallete.textColor,
+        ),
+      ),
+    );
   }
 }
