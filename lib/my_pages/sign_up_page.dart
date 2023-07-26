@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/auth.dart';
 import 'package:twitter_clone/constant.dart';
 import 'package:twitter_clone/my_pages/home_page.dart';
 import 'package:twitter_clone/my_pages/login_page/login_page.dart';
@@ -10,7 +12,26 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  bool passwordVisible = false;
+  String errorMessage = "";
+  String password = "";
+  String passwordconfirm = "";
+  String email = "";
+  String name = "";
+
+  Future<void> createUserWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      await Auth()
+          .createUserWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      errorMessage = e.message!;
+    }
+  }
+
+  bool passwordVisible = true;
+  bool passwordVisible1 = true;
+  final _formkey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,105 +42,158 @@ class _SignUpPageState extends State<SignUpPage> {
         title: Text("Sign Up"),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 50,
-            ),
-            TextField(
-              style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey.shade700, width: 1.0)),
-                focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue)),
-                label: const Text("Enter your Name",
-                    style: TextStyle(color: Colors.grey)),
+        child: Form(
+          key: _formkey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 50,
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextField(
-              style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey.shade700, width: 1.0)),
-                focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue)),
-                label: const Text("Enter your email",
-                    style: TextStyle(color: Colors.grey)),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextField(
-              obscureText: passwordVisible,
-              style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                suffixIcon: IconButton(
-                  icon: Icon(passwordVisible
-                      ? Icons.visibility
-                      : Icons.visibility_off),
-                  onPressed: () {
-                    setState(() => passwordVisible = !passwordVisible);
+              TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.grey.shade700, width: 1.0)),
+                    focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue)),
+                    label: const Text("Enter your Name",
+                        style: TextStyle(color: Colors.grey)),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      name = value;
+                    });
                   },
-                  iconSize: 20,
-                ),
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey.shade700, width: 1.0)),
-                focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue)),
-                label: const Text("Enter your password",
-                    style: TextStyle(color: Colors.grey)),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Please enter your name";
+                    }
+                  }),
+              SizedBox(
+                height: 10,
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextField(
-              style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                suffixIcon: IconButton(
-                  icon: Icon(passwordVisible
-                      ? Icons.visibility
-                      : Icons.visibility_off),
-                  onPressed: () {
-                    setState(() => passwordVisible = !passwordVisible);
+              TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.grey.shade700, width: 1.0)),
+                    focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue)),
+                    label: const Text("Enter your email",
+                        style: TextStyle(color: Colors.grey)),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      email = value;
+                    });
                   },
-                  iconSize: 20,
-                ),
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey.shade700, width: 1.0)),
-                focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue)),
-                label: const Text("Confirm your password",
-                    style: TextStyle(color: Colors.grey)),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Please enter your email";
+                    }
+                  }),
+              SizedBox(
+                height: 10,
               ),
-              obscureText: passwordVisible,
-            ),
-            SizedBox(
-              height: 150,
-            ),
-            SizedBox(
-              height: 40,
-              width: 420,
-              child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
-                        (route) => false);
+              TextFormField(
+                  onChanged: (value) => password = value,
+                  obscureText: passwordVisible1,
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      icon: Icon(passwordVisible1
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      onPressed: () {
+                        setState(() => passwordVisible1 = !passwordVisible1);
+                      },
+                      iconSize: 20,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.grey.shade700, width: 1.0)),
+                    focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue)),
+                    label: const Text("Enter your password",
+                        style: TextStyle(color: Colors.grey)),
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Please enter your password";
+                    }
+                  }),
+              SizedBox(
+                height: 10,
+              ),
+              TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      icon: Icon(passwordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      onPressed: () {
+                        setState(() => passwordVisible = !passwordVisible);
+                      },
+                      iconSize: 20,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.grey.shade700, width: 1.0)),
+                    focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue)),
+                    label: const Text("Confirm your password",
+                        style: TextStyle(color: Colors.grey)),
+                  ),
+                  obscureText: passwordVisible,
+                  onChanged: (value) {
+                    setState(() {
+                      passwordconfirm = value;
+                    });
                   },
-                  child: const Text("Sign Up")),
-            ),
-          ],
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Please enter your password";
+                    } else if (value != password) {
+                      return "Passwords do not match";
+                    }
+                  }),
+              SizedBox(
+                height: 150,
+              ),
+              SizedBox(
+                height: 40,
+                width: 420,
+                child: ElevatedButton(
+                    onPressed: () {
+                      if (_formkey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content: Text('Passwords do not match')),
+                        );
+                      } else {
+                        if (password == passwordconfirm &&
+                            password.isNotEmpty &&
+                            email.isNotEmpty &&
+                            name.isNotEmpty) {
+                          createUserWithEmailAndPassword(email, password)
+                              .whenComplete(() {
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()),
+                                (route) => false);
+                          });
+                        }
+                      }
+                    },
+                    child: const Text("Sign Up")),
+              ),
+            ],
+          ),
         ),
       ),
     );

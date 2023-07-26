@@ -33,6 +33,7 @@ class _PasswordPageState extends State<PasswordPage> {
   String password = "";
   String errorMessage = "";
   bool isLogin = false;
+  final _formkey = GlobalKey<FormState>();
 
   Future<void> signInWithEmailAndPassword(String email, String password) async {
     try {
@@ -44,16 +45,6 @@ class _PasswordPageState extends State<PasswordPage> {
       setState(() {
         isLogin = false;
       });
-      errorMessage = e.message!;
-    }
-  }
-
-  Future<void> createUserWithEmailAndPassword(
-      String email, String password) async {
-    try {
-      await Auth()
-          .createUserWithEmailAndPassword(email: email, password: password);
-    } on FirebaseAuthException catch (e) {
       errorMessage = e.message!;
     }
   }
@@ -74,134 +65,92 @@ class _PasswordPageState extends State<PasswordPage> {
             image: AssetImage('assets/images/twitter.png'), height: 30),
         backgroundColor: Colors.transparent,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(
-              height: 100,
-            ),
-            const Text('Enter your password',
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white)),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: 50,
-                width: 300,
-                child: TextField(
-                  onChanged: (value) => password = value,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.grey.shade700, width: 1.0)),
-                    focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue)),
-                    label: const Text("Password",
-                        style: TextStyle(color: Colors.white)),
-                  ),
+      body: Form(
+        key: _formkey,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 100,
+              ),
+              const Text('Enter your password',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  height: 50,
+                  width: 300,
+                  child: TextFormField(
+                      onChanged: (value) => password = value,
+                      style: const TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.grey.shade700, width: 1.0)),
+                        focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blue)),
+                        label: const Text("Password",
+                            style: TextStyle(color: Colors.white)),
+                      ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please enter your password";
+                        }
+                      }),
                 ),
               ),
-            ),
-            const SizedBox(height: 30),
-            Center(
-              child: SizedBox(
-                width: 300,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0),
+              const SizedBox(height: 30),
+              Center(
+                child: SizedBox(
+                  width: 300,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
                       ),
                     ),
-                  ),
-                  onPressed: () {
-                    signInWithEmailAndPassword(widget.email, password)
-                        .whenComplete(() {
-                      if (isLogin) {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const Navigators();
-                        }));
-                      } else {
-                        showDialog(
-                          context: context,
-                          builder: (context) => SimpleDialog(
-                            title: const Center(
-                                child: Text("Kullanıcı adı veya şifre hatalı")),
-                            children: [
-                              ElevatedButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text("Tamam"),
-                              ),
-                            ],
-                          ),
+                    onPressed: () {
+                      if (_formkey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content:
+                                  Text('User not found or wrong password')),
                         );
+                      } else {
+                        signInWithEmailAndPassword(widget.email, password)
+                            .whenComplete(() {
+                          if (isLogin) {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const Navigators();
+                            }));
+                          } else {}
+                        });
                       }
-                    });
-                  },
-                  child: const Text(
-                    "Log in",
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
+                    },
+                    child: const Text(
+                      "Log in",
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    );
-  }
-
-  void showLogIn(BuildContext context, Future future) {
-    showDialog(
-      context: context,
-      builder: (context) => FutureBuilder<void>(
-          future: future,
-          builder: ((context, AsyncSnapshot<void> snapshot) {
-            if (snapshot.hasData) {
-              ///Sunucuya 200 ile başarılı istek atıldı
-              return SimpleDialog(
-                title: const Text("Oturum açma başarılı"),
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const Navigators();
-                      }));
-                    },
-                    child: const Text("Tamam"),
-                  ),
-                ],
-              );
-            } else {
-              return SimpleDialog(
-                title: const Text("Error"),
-                children: [
-                  Text(snapshot.error.toString()),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text("Tamam"),
-                  ),
-                ],
-              );
-            }
-          })),
     );
   }
 }
