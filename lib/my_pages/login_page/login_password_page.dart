@@ -56,7 +56,6 @@ class _PasswordPageState extends State<PasswordPage> {
   // Future<void> _signOut() async {
   //   await Auth().signOut();
   // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
