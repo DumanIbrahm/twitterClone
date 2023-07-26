@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/NotificationsPages/Settings/setting_for_notifications.dart';
-import 'package:twitter_clone/constant.dart';
-import 'package:twitter_clone/my_pages/bottom_navigation_bar.dart';
 import 'package:twitter_clone/my_pages/drawer.dart';
 
 class NotificationsPage extends StatefulWidget {
@@ -35,7 +33,7 @@ Widget tabController(context) {
           ),
           actions: [
             Padding(
-              padding: EdgeInsets.only(right: 10, left: 10),
+              padding: const EdgeInsets.only(right: 10, left: 10),
               child: IconButton(
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(

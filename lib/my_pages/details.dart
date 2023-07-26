@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/constant.dart';
 
+// ignore: must_be_immutable
 class Details extends StatefulWidget {
+  // ignore: prefer_typing_uninitialized_variables
   var imgpath;
 
   Details({required this.imgpath, super.key});
@@ -18,7 +20,7 @@ class _DetailsState extends State<Details> {
         backgroundColor: Pallete.primaryColor,
         appBar: AppBar(
           backgroundColor: Pallete.primaryColor,
-          actions: [
+          actions: const [
             Icon(Icons.more_vert),
             SizedBox(
               width: 10,
@@ -36,11 +38,11 @@ class _DetailsState extends State<Details> {
                       backgroundImage: NetworkImage(
                           "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_960_720.jpg"),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Column(
-                      children: [
+                      children: const [
                         Text(
                           "Daisy",
                           style: TextStyle(
@@ -63,12 +65,12 @@ class _DetailsState extends State<Details> {
                   padding: const EdgeInsets.only(right: 20.0),
                   child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                          padding: EdgeInsets.only(left: 20, right: 20),
-                          side: BorderSide(color: Pallete.textColor),
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          side: const BorderSide(color: Pallete.textColor),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30))),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Takip et",
                         style: TextStyle(color: Pallete.textColor),
                       )),
@@ -77,7 +79,7 @@ class _DetailsState extends State<Details> {
             ),
             Container(
               width: MediaQuery.of(context).size.width - 160,
-              height: MediaQuery.of(context).size.height - 250,
+              height: MediaQuery.of(context).size.height - 300,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(widget.imgpath), fit: BoxFit.cover)),
@@ -165,8 +167,8 @@ class _DetailsState extends State<Details> {
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: const Icon(
+                  const Expanded(
+                    child: Icon(
                       Icons.share_outlined,
                       color: Pallete.textGrey,
                     ),
@@ -177,16 +179,16 @@ class _DetailsState extends State<Details> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
-                style: TextStyle(color: Pallete.textColor),
+                style: const TextStyle(color: Pallete.textColor),
                 decoration: InputDecoration(
-                  labelStyle: TextStyle(color: Pallete.textGrey),
+                  labelStyle: const TextStyle(color: Pallete.textGrey),
                   hintText: "Yanıtını Tweetle",
-                  hintStyle: TextStyle(color: Pallete.textGrey),
+                  hintStyle: const TextStyle(color: Pallete.textGrey),
                   border: UnderlineInputBorder(
                     borderRadius: BorderRadius.circular(
                       20,
                     ),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Pallete.textGrey,
                     ),
                   ),

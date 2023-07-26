@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/constant.dart';
-import 'package:twitter_clone/my_pages/bottom_navigation_bar.dart';
 import 'package:twitter_clone/my_pages/details.dart';
 import 'package:twitter_clone/my_pages/drawer.dart';
 
@@ -33,7 +32,6 @@ class _AnaSayfaState extends State<AnaSayfa>
   TabController? tabController;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     tabController = TabController(length: 2, vsync: this);
   }
@@ -55,8 +53,15 @@ class _AnaSayfaState extends State<AnaSayfa>
           length: 2,
           initialIndex: 0,
           child: Scaffold(
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {},
+              backgroundColor: Pallete.twitterBlue,
+              child: const Icon(
+                Icons.add,
+                color: Pallete.textColor,
+              ),
+            ),
             drawer: const DrawerMenu(),
-            bottomNavigationBar: const BottomNavigationBars(),
             appBar: AppBar(
               title: Center(
                 child: Image.network(
@@ -88,7 +93,7 @@ class _AnaSayfaState extends State<AnaSayfa>
                   materialMethod2(context),
                   materialMethod(context),
                   materialMethod2(context),
-                  materialMethod2(context),
+                  materialMethod(context),
                   //Card
                 ],
               ),
@@ -133,7 +138,7 @@ class _AnaSayfaState extends State<AnaSayfa>
                     const SizedBox(
                       width: 10,
                     ),
-                    Container(
+                    SizedBox(
                       width: MediaQuery.of(context).size.width - 160,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,7 +178,7 @@ class _AnaSayfaState extends State<AnaSayfa>
                 const SizedBox(
                   height: 15,
                 ),
-                Container(
+                SizedBox(
                   width: MediaQuery.of(context).size.width - 160,
                   child: const Text(
                     "This official website features a ribbed knit zipper jacket that is "
@@ -325,7 +330,7 @@ class _AnaSayfaState extends State<AnaSayfa>
                       const SizedBox(
                         width: 10,
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width - 160,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -365,7 +370,7 @@ class _AnaSayfaState extends State<AnaSayfa>
                   const SizedBox(
                     height: 15,
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width - 160,
                     child: const Text(
                       "This official website features a ribbed knit zipper jacket that is "
@@ -379,7 +384,7 @@ class _AnaSayfaState extends State<AnaSayfa>
                   const SizedBox(
                     height: 15,
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width - 160,
                     height: MediaQuery.of(context).size.height - 430,
                     child: Image.network(

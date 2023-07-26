@@ -61,10 +61,13 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
       body: SingleChildScrollView(
         child: Column(children: [
           ListTile(
-            title: const Text("E-postta bildirimleri", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+            title: const Text(
+              "E-postta bildirimleri",
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
             trailing: Switch(
-              activeColor: Pallete.onSwitchColor,
-                
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch,
                 onChanged: (value) {
                   setState(() {
@@ -77,15 +80,21 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 "Twitter'da olmadığın zamanlarda olup bitenleri öğrenmek için e-posta al. Bu özelliği istediğin zaman kapatabilirsin.",
                 style: TextStyle(color: Colors.grey, fontSize: 14)),
           ),
-          const Divider(color: Colors.grey,),
-          const ListTile(title: Text("Sen ve Tweetlerinle ilgili", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18))),
+          const Divider(
+            color: Colors.grey,
+          ),
+          const ListTile(
+              title: Text("Sen ve Tweetlerinle ilgili",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18))),
           ListTile(
-            title: const Text(
-                "Yeni bildirimler",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+            title: const Text("Yeni bildirimler",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch1,
                 onChanged: (value) {
                   setState(() {
@@ -94,12 +103,11 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 }),
           ),
           ListTile(
-            title: const Text(
-                "Direkt Mesajlar",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+            title: const Text("Direkt Mesajlar",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch2,
                 onChanged: (value) {
                   setState(() {
@@ -108,12 +116,11 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 }),
           ),
           ListTile(
-            title: const Text(
-                "Sana e-posta ile gönderilern Tweetler",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+            title: const Text("Sana e-posta ile gönderilern Tweetler",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch3,
                 onChanged: (value) {
                   setState(() {
@@ -121,37 +128,48 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                   });
                 }),
           ),
-          const Divider(color: Colors.grey,),
-          const ListTile(title: Text("Senin ağından",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18)),),
-          ListTile(
-            title: Expanded(
-              child: Row(
-                children: const [
-                   Text(
-                      "Popüler Tweetler ve Hikayeler",
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
-                      //Text("  Periyodik olarak", style: TextStyle(color: Colors.grey))
-                ],
-              ),
-            ),
-                trailing:IconButton(onPressed: (){
-                  Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const PopularTweets()),
-                        (route) => true,
-                      );
-                }, icon: Icon(Icons.arrow_forward_ios), color: Colors.white, iconSize: 15,)
-                  
-                
+          const Divider(
+            color: Colors.grey,
+          ),
+          const ListTile(
+            title: Text("Senin ağından",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18)),
           ),
           ListTile(
-            title: const Text(
-                "Tweetlerinin performansı hakkında güncellemeler",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+              title: Expanded(
+                child: Row(
+                  children: const [
+                    Text("Popüler Tweetler ve Hikayeler",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15)),
+                    //Text("  Periyodik olarak", style: TextStyle(color: Colors.grey))
+                  ],
+                ),
+              ),
+              trailing: IconButton(
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PopularTweets()),
+                    (route) => true,
+                  );
+                },
+                icon: const Icon(Icons.arrow_forward_ios),
+                color: Colors.white,
+                iconSize: 15,
+              )),
+          ListTile(
+            title: const Text("Tweetlerinin performansı hakkında güncellemeler",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch4,
                 onChanged: (value) {
                   setState(() {
@@ -159,15 +177,23 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                   });
                 }),
           ),
-          const Divider(color: Colors.grey,),
-          const ListTile(title: Text("Twitter'dan",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18)),),
+          const Divider(
+            color: Colors.grey,
+          ),
+          const ListTile(
+            title: Text("Twitter'dan",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18)),
+          ),
           ListTile(
             title: const Text(
                 "Twitter ürün ve özelliklerindeki güncellemelerle ilgili haberler",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch5,
                 onChanged: (value) {
                   setState(() {
@@ -178,10 +204,10 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
           ListTile(
             title: const Text(
                 "Twitter'dan daha iyi bir şekilde yararlanmakla ilgili ipuçları",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch6,
                 onChanged: (value) {
                   setState(() {
@@ -190,12 +216,11 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 }),
           ),
           ListTile(
-            title: const Text(
-                "Twitter'a son girdiğinden bu yana kaçırdıkların",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+            title: const Text("Twitter'a son girdiğinden bu yana kaçırdıkların",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch7,
                 onChanged: (value) {
                   setState(() {
@@ -206,10 +231,10 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
           ListTile(
             title: const Text(
                 "İş ortağı ürünleri ve üçüncü parti hizmetlerinde Twitter ile ilgili haberler",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch8,
                 onChanged: (value) {
                   setState(() {
@@ -218,12 +243,11 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 }),
           ),
           ListTile(
-            title: const Text(
-                "Twitter araştırma anketlerine katılım",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+            title: const Text("Twitter araştırma anketlerine katılım",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch9,
                 onChanged: (value) {
                   setState(() {
@@ -232,12 +256,11 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 }),
           ),
           ListTile(
-            title: const Text(
-                "Önerilen hesaplarla ilgili tavsiyeler",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+            title: const Text("Önerilen hesaplarla ilgili tavsiyeler",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch10,
                 onChanged: (value) {
                   setState(() {
@@ -246,12 +269,11 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 }),
           ),
           ListTile(
-            title: const Text(
-                "Takip ettiğin son hesaplara göre öneriler",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+            title: const Text("Takip ettiğin son hesaplara göre öneriler",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch11,
                 onChanged: (value) {
                   setState(() {
@@ -260,12 +282,11 @@ class _EPostaBildirimState extends State<EPostaBildirim> {
                 }),
           ),
           ListTile(
-            title: const Text(
-                "Twitter ticari ürünleri hakkında ipuçları",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                trailing: Switch(
-                  activeColor: Pallete.onSwitchColor,
-                  
+            title: const Text("Twitter ticari ürünleri hakkında ipuçları",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            trailing: Switch(
+                activeColor: Pallete.onSwitchColor,
                 value: _isSwitch12,
                 onChanged: (value) {
                   setState(() {
