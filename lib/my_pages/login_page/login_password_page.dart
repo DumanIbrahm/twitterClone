@@ -53,13 +53,9 @@ class _PasswordPageState extends State<PasswordPage> {
 
   final User? user = Auth().currentUser;
 
-<<<<<<< HEAD
-=======
   // Future<void> _signOut() async {
   //   await Auth().signOut();
   // }
-
->>>>>>> 57d7caaca37521678be9a2b8fc3d0a298c8e82e8
   @override
   Widget build(BuildContext context) {
     return Scaffold(
