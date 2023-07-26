@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/my_pages/login_page/login_password_page.dart';
 import 'package:twitter_clone/my_pages/navigator_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -173,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return const Navigators();
+                              return const PasswordPage();
                             }));
                           },
                           child: const Text(
