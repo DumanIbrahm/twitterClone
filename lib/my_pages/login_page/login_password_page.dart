@@ -101,6 +101,7 @@ class _PasswordPageState extends State<PasswordPage> {
                         if (value!.isEmpty) {
                           return "Please enter your password";
                         }
+                        return null;
                       }),
                 ),
               ),

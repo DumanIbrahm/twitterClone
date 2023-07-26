@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class MessageToPerson extends StatefulWidget {
   //const MessageToPerson({Key? key}) : super(key: key);
 
@@ -30,7 +31,6 @@ class _MessageToPersonState extends State<MessageToPerson> {
             Navigator.pop(context);
           },
         ),
-
         title: Text(
           widget.item,
           style: const TextStyle(color: Colors.white),

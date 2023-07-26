@@ -171,6 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                                 if (value!.isEmpty) {
                                   return "Please enter your Phone, e-mail, or username";
                                 }
+                                return null;
                               }),
                         ),
                       ),
@@ -258,7 +259,7 @@ class _LoginPageState extends State<LoginPage> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) {
-                                        return SignUpPage();
+                                        return const SignUpPage();
                                       },
                                     ),
                                   );
