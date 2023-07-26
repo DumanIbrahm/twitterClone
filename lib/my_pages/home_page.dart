@@ -222,96 +222,81 @@ class _AnaSayfaState extends State<AnaSayfa>
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Flexible(
-                        flex: 1,
-                        child: Row(
-                          children: const [
-                            Icon(
-                              Icons.comment_outlined,
-                              color: Pallete.textGrey,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "661",
-                              style: TextStyle(color: Pallete.textGrey),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                          ],
-                        ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.comment_outlined,
+                            color: Pallete.textGrey,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "661",
+                            style: TextStyle(color: Pallete.textGrey),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Row(
-                          children: const [
-                            Icon(
-                              Icons.repeat_outlined,
-                              color: Pallete.textGrey,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "3.077",
-                              style: TextStyle(color: Pallete.textGrey),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                          ],
-                        ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.repeat_outlined,
+                            color: Pallete.textGrey,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "3.077",
+                            style: TextStyle(color: Pallete.textGrey),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Row(
-                          children: const [
-                            Icon(
-                              Icons.favorite_border_outlined,
-                              color: Pallete.textGrey,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "43.7B",
-                              style: TextStyle(color: Pallete.textGrey),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                          ],
-                        ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.favorite_border_outlined,
+                            color: Pallete.textGrey,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "43.7B",
+                            style: TextStyle(color: Pallete.textGrey),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Row(
-                          children: const [
-                            Icon(
-                              Icons.query_stats,
-                              color: Pallete.textGrey,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "2.5Mn",
-                              style: TextStyle(color: Pallete.textGrey),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                          ],
-                        ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.query_stats,
+                            color: Pallete.textGrey,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "2.5Mn",
+                            style: TextStyle(color: Pallete.textGrey),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
                       ),
-                      const Flexible(
-                        flex: 1,
-                        child: Icon(
-                          Icons.share_outlined,
-                          color: Pallete.textGrey,
-                        ),
+                      const Icon(
+                        Icons.share_outlined,
+                        color: Pallete.textGrey,
                       )
                     ]),
               ],
