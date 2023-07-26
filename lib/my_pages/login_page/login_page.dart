@@ -1,6 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/my_pages/login_page/login_password_page.dart';
 import 'package:twitter_clone/my_pages/navigator_page.dart';
+
 import 'package:twitter_clone/my_pages/sign_up_page.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,6 +15,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  @override
+  void initState() {
+    Firebase.initializeApp();
+    super.initState();
+  }
+
+  String email = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,6 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 50,
                         width: buttonWidth,
                         child: TextField(
+                          onChanged: (value) => email = value,
                           style: const TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
@@ -174,7 +187,9 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return const Navigators();
+                              return PasswordPage(
+                                email: email,
+                              );
                             }));
                           },
                           child: const Text(
