@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/my_pages/login_page/login_page.dart';
-import 'package:twitter_clone/my_pages/sign_up_page.dart';
 
 void main() => runApp(const MyApp());
 
